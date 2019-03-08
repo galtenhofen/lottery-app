@@ -1,0 +1,48 @@
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<!--<div class="mat-elevation-z8">-->
+  <mat-table #entryTable [dataSource]="dataSource">
+
+    <!-- LeagueName Column -->
+    <ng-container matColumnDef="LeagueName">
+      <mat-header-cell *matHeaderCellDef> League Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.LeagueName}} </mat-cell>
+    </ng-container>
+
+    <!-- StartDate Column -->
+    <ng-container matColumnDef="StartDate">
+      <mat-header-cell *matHeaderCellDef> Start Name </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.StartDate}} </mat-cell>
+    </ng-container>
+
+    <!-- CompletedDate Column -->
+    <ng-container matColumnDef="CompletedDate">
+      <mat-header-cell *matHeaderCellDef> Completed Date </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.CompletedDate}} </mat-cell>
+    </ng-container>
+
+    <!-- NumbersHit Column -->
+    <ng-container matColumnDef="NumbersHit">
+      <mat-header-cell *matHeaderCellDef> Numbers Hit </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.NumbersHit}} </mat-cell>
+    </ng-container>
+
+    <!-- Place Column -->
+    <ng-container matColumnDef="Place">
+      <mat-header-cell *matHeaderCellDef> Place </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Place}} </mat-cell>
+    </ng-container>
+
+    <!-- Winnings Column -->
+    <ng-container matColumnDef="Winnings">
+      <mat-header-cell *matHeaderCellDef> Winnings </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.Winnings}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+<!--</div>-->

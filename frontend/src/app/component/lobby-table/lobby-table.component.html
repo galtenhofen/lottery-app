@@ -1,0 +1,57 @@
+<mat-form-field>
+  <input matInput (keyup)="applyFilter($event.target.value)" placeholder="Filter">
+</mat-form-field>
+
+<!--<div class="mat-elevation-z8">-->
+<mat-table #entryTable [dataSource]="dataSource">
+
+  <!-- LeagueName Column -->
+  <ng-container matColumnDef="LeagueName">
+    <mat-header-cell *matHeaderCellDef> League Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.LeagueName}} </mat-cell>
+  </ng-container>
+
+  <!-- StartDate Column -->
+  <ng-container matColumnDef="StartDate">
+    <mat-header-cell *matHeaderCellDef> Start Name </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.StartDate}} </mat-cell>
+  </ng-container>
+
+  <!-- Entries Column -->
+  <ng-container matColumnDef="Entries">
+    <mat-header-cell *matHeaderCellDef> Entries </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Entries}} </mat-cell>
+  </ng-container>
+
+  <!-- Size Column -->
+  <ng-container matColumnDef="Size">
+    <mat-header-cell *matHeaderCellDef> Size </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Size}} </mat-cell>
+  </ng-container>
+
+  <!-- NumbersHit Column -->
+  <ng-container matColumnDef="EntryFee">
+    <mat-header-cell *matHeaderCellDef> Entry Fee </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.EntryFee}} </mat-cell>
+  </ng-container>
+
+  <!-- Prizes Column -->
+  <ng-container matColumnDef="Prizes">
+    <mat-header-cell *matHeaderCellDef> Prizes </mat-header-cell>
+    <mat-cell *matCellDef="let element"> {{element.Prizes}} </mat-cell>
+  </ng-container>
+
+  <!-- ENTER button Column -->
+  <ng-container matColumnDef="EnterButton">
+    <mat-header-cell  *matHeaderCellDef > </mat-header-cell>
+    <mat-cell *matCellDef="let element" >
+      <button mat-button >Enter</button>
+    </mat-cell>
+  </ng-container>
+
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;" (click)="onRowClicked(row.LeagueId)"></mat-row>
+</mat-table>
+
+<!--</div>-->

@@ -10,7 +10,13 @@ import { NotFoundComponent } from './not-found';
 import { ChangePasswordComponent } from './change-password';
 import { ForbiddenComponent } from './forbidden';
 import { SignupComponent } from './signup';
- 
+import {LobbyComponent} from "./lobby/lobby.component";
+import {UpcomingEntriesComponent} from "./upcoming-entries/upcoming-entries.component";
+import {LiveEntriesComponent} from "./live-entries/live-entries.component";
+import {CompletedEntriesComponent} from "./completed-entries/completed-entries.component";
+import {NumbersComponent} from "./numbers/numbers.component";
+import {AccountDetailsComponent} from "./account-details/account-details.component";
+
 export const routes: Routes = [
   {
     path: '',
@@ -27,6 +33,36 @@ export const routes: Routes = [
     path: 'login',
     component: LoginComponent,
     canActivate: [GuestGuard]
+  },
+  {
+    path: 'lobby',
+    component: LobbyComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'upcoming',
+    component: UpcomingEntriesComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'live',
+    component: LiveEntriesComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'completed',
+    component: CompletedEntriesComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'numbers',
+    component: NumbersComponent,
+    canActivate: [LoginGuard]
+  },
+  {
+    path: 'account',
+    component: AccountDetailsComponent,
+    canActivate: [LoginGuard]
   },
   {
     path: 'change-password',

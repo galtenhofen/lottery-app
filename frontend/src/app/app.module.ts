@@ -10,6 +10,7 @@ import {
   MatIconModule,
   MatToolbarModule,
   MatTooltipModule,
+  MatTableModule,
   MatCardModule,
   MatInputModule,
   MatIconRegistry,
@@ -42,6 +43,15 @@ import { ChangePasswordComponent } from './change-password/change-password.compo
 import { ForbiddenComponent } from './forbidden/forbidden.component';
 import { AdminComponent } from './admin/admin.component';
 import { SignupComponent } from './signup/signup.component';
+import { LobbyComponent } from './lobby/lobby.component';
+import { UpcomingEntriesComponent } from './upcoming-entries/upcoming-entries.component';
+import { LiveEntriesComponent } from './live-entries/live-entries.component';
+import { CompletedEntriesComponent } from './completed-entries/completed-entries.component';
+import { NumbersComponent } from './numbers/numbers.component';
+import { AccountDetailsComponent } from './account-details/account-details.component';
+import { EntryTableComponent } from './component/entry-table/entry-table.component';
+import { LobbyTableComponent } from './component/lobby-table/lobby-table.component';
+import { ILeague } from './interfaces/league';
 
 export function initUserFactory(userService: UserService) {
     return () => userService.initUser();
@@ -61,7 +71,15 @@ export function initUserFactory(userService: UserService) {
     ChangePasswordComponent,
     ForbiddenComponent,
     AdminComponent,
-    SignupComponent
+    SignupComponent,
+    LobbyComponent,
+    UpcomingEntriesComponent,
+    LiveEntriesComponent,
+    CompletedEntriesComponent,
+    NumbersComponent,
+    AccountDetailsComponent,
+    EntryTableComponent,
+    LobbyTableComponent
   ],
   imports: [
     BrowserAnimationsModule,
@@ -76,6 +94,7 @@ export function initUserFactory(userService: UserService) {
     MatButtonModule,
     MatIconModule,
     MatInputModule,
+    MatTableModule,
     MatToolbarModule,
     MatCardModule,
     MatProgressSpinnerModule,
